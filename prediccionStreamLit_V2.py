@@ -7,11 +7,10 @@ import pandas as pd
 # --- Cargar el modelo Keras ---
 @st.cache_resource
 def cargar_modelo():
-    modelo = tf.keras.models.load_model("modelo_autoencoder1.keras", compile=False,
-            custom_objects={
-                # La clase que el loader no encuentra:
-                "Functional": tf.keras.models.Model
-            })
+    modelo = tf.keras.models.load_model(
+            "modelo_autoencoder1.h5",
+            compile=False
+        )
     return modelo
 
 # --- Preprocesamiento para imágenes en escala de grises ---
