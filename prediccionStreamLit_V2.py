@@ -28,6 +28,46 @@ etiquetas = [
 
 # --- Título de la aplicación ---
 st.title("🧠 Clasificador de Ciberataques con Keras")
+
+
+st.markdown("""
+Este proyecto consiste en una aplicación web diseñada para facilitar 
+la detección de intrusiones en sistemas IoT mediante el análisis de imágenes.
+El modelo ha sido entrenado con una amplia variedad de ataques representativos
+de las distintas capas de IoT, a partir de las imágenes obtenidas de los conjuntos
+Bot IoT y CIC IoT Dataset 2023. Este enfoque innovador tiene como fin mejorar la
+capacidad de predicción de los sistemas de detección de intrusiones y, al mismo 
+tiempo, reducir la carga de trabajo en las etapas de preprocesamiento de datos.
+Al tratarse de una línea de investigación novedosa en el ámbito de IoT, la
+detección de intrusiones mediante procesamiento de imágenes abre nuevas
+posibilidades de aplicación en seguridad.
+""")
+
+
+attacks = [
+    "ARP_Spoofing",
+    "Backdoor_Malware",
+    "Browser_Hijacking",
+    "Brute_Force",
+    "Command_Injection",
+    "DDOS",
+    "DNS_Spoofing",
+    "DOS",
+    "Mirai",
+    "MITM_ARP_Spoofing",
+    "Normal",
+    "Scan",
+    "SqlInjection",
+    "Theft"
+]
+
+
+# convierte la lista en un bloque Markdown con viñetas
+markdown_list = "\n".join(f"- {atk}" for atk in attacks)
+st.markdown("**Lista de ataques disponibles:**\n\n" + markdown_list)
+
+
+
 st.write("Sube una imagen para predecir su categoría de ciberataque.")
 
 # --- Cargar imagen del usuario ---
