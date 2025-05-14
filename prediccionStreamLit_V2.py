@@ -86,7 +86,7 @@ if archivo_imagen:
     # --- Cargar modelo e inferencia ---
     modelo = cargar_modelo()
     if modelo is None:
-    st.stop()
+        st.stop()
     salida_predicha = modelo.predict(imagen_preparada)
 
     # Si el modelo retorna una lista de outputs, usar la salida que contiene las predicciones de clase
